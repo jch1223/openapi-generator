@@ -1,0 +1,16 @@
+{
+ 
+  "name": "open-api-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.13.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "openapi-generator-cli generate -g typescript-axios -i ./src/schema/openapi.yml -o ./src/api"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

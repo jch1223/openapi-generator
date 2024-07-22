@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: test api
+  version: 0.0.1
+servers:
+- url: https://localhost:3000
+  description: 로컬호스트
+paths:
+  /data:
+    get:
+      summary: 데이터 조희
+      description: |-
+        데이터 조희
+      parameters:
+      - name: exampleQueryStirng
+        in: query
+        schema:
+          type: stirng  
+      responses:
+        '200':
+          description: 성공 응답으로 데이터를 반환합니다.
+          content:
+            application/json:
+              schema: 
+                type: array
+                items:
+                  type: string
+                  nullable: true
+                  description: 데이터
