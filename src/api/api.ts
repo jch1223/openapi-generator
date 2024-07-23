@@ -23,6 +23,25 @@ import type { RequestArgs } from './base';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
+/**
+ * 
+ * @export
+ * @interface DataGetExampleQueryStirngParameter
+ */
+export interface DataGetExampleQueryStirngParameter {
+    /**
+     * 
+     * @type {string}
+     * @memberof DataGetExampleQueryStirngParameter
+     */
+    'nullableSting'?: string | null;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof DataGetExampleQueryStirngParameter
+     */
+    'nullalbeArray'?: Array<string>;
+}
 
 /**
  * DefaultApi - axios parameter creator
@@ -33,11 +52,11 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 데이터 조희
          * @summary 데이터 조희
-         * @param {Stirng} [exampleQueryStirng] 
+         * @param {DataGetExampleQueryStirngParameter} [exampleQueryStirng] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dataGet: async (exampleQueryStirng?: Stirng, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        dataGet: async (exampleQueryStirng?: DataGetExampleQueryStirngParameter, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/data`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -80,11 +99,11 @@ export const DefaultApiFp = function(configuration?: Configuration) {
         /**
          * 데이터 조희
          * @summary 데이터 조희
-         * @param {Stirng} [exampleQueryStirng] 
+         * @param {DataGetExampleQueryStirngParameter} [exampleQueryStirng] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async dataGet(exampleQueryStirng?: Stirng, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<string>>> {
+        async dataGet(exampleQueryStirng?: DataGetExampleQueryStirngParameter, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<string>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.dataGet(exampleQueryStirng, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DefaultApi.dataGet']?.[localVarOperationServerIndex]?.url;
@@ -103,11 +122,11 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
         /**
          * 데이터 조희
          * @summary 데이터 조희
-         * @param {Stirng} [exampleQueryStirng] 
+         * @param {DataGetExampleQueryStirngParameter} [exampleQueryStirng] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dataGet(exampleQueryStirng?: Stirng, options?: any): AxiosPromise<Array<string>> {
+        dataGet(exampleQueryStirng?: DataGetExampleQueryStirngParameter, options?: any): AxiosPromise<Array<string>> {
             return localVarFp.dataGet(exampleQueryStirng, options).then((request) => request(axios, basePath));
         },
     };
@@ -123,12 +142,12 @@ export class DefaultApi extends BaseAPI {
     /**
      * 데이터 조희
      * @summary 데이터 조희
-     * @param {Stirng} [exampleQueryStirng] 
+     * @param {DataGetExampleQueryStirngParameter} [exampleQueryStirng] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DefaultApi
      */
-    public dataGet(exampleQueryStirng?: Stirng, options?: RawAxiosRequestConfig) {
+    public dataGet(exampleQueryStirng?: DataGetExampleQueryStirngParameter, options?: RawAxiosRequestConfig) {
         return DefaultApiFp(this.configuration).dataGet(exampleQueryStirng, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -15,7 +15,16 @@ paths:
       - name: exampleQueryStirng
         in: query
         schema:
-          type: stirng  
+          type: object
+          properties:
+            nullableSting:
+              type: string
+              nullable: true
+            nullalbeArray:
+              type: array
+              items:
+                type: string
+                nullable: true
       responses:
         '200':
           description: 성공 응답으로 데이터를 반환합니다.
