@@ -1,5 +1,6 @@
 # openapi generator
 openapi generator: https://github.com/OpenAPITools/openapi-generator
+
 cli install: https://openapi-generator.tech/docs/installation/
 
 ```
